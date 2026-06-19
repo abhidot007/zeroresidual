@@ -233,9 +233,9 @@ export default function BioHeatChart() {
       </div>
 
       {/* Stopping condition alert */}
-      {!playing && frameIdx === FRAMES.length - 1 && (
+      {!playing && frameIdx === FRAMES.length - 1 && FRAMES[FRAMES.length - 1]?.haltTemp && (
         <div className="mono text-xs mb-3 px-3 py-1" style={{ background: "#1a0a0a", border: "1px solid #2a1a1a", color: "#a06060" }}>
-          inner surface reached 30°C at t = {timeMins} min — simulation stopped
+          simulation complete · t = {timeMins} min · T_inner = {currentFrame.T[0].toFixed(2)}°C
         </div>
       )}
 
